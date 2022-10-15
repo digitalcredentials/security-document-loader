@@ -1,7 +1,7 @@
-# Example Isomorphic TS/JS Lib Template _(@digitalcredentials/isomorphic-lib-template)_
+# Example Isomorphic TS/JS Lib Template _(@digitalcredentials/security-document-loader)_
 
-[![Build status](https://img.shields.io/github/workflow/status/digitalcredentials/isomorphic-lib-template/Node.js%20CI)](https://github.com/digitalcredentials/isomorphic-lib-template/actions?query=workflow%3A%22Node.js+CI%22)
-[![NPM Version](https://img.shields.io/npm/v/@digitalcredentials/isomorphic-lib-template.svg)](https://npm.im/@digitalcredentials/isomorphic-lib-template)
+[![Build status](https://img.shields.io/github/workflow/status/digitalcredentials/security-document-loader/Node.js%20CI)](https://github.com/digitalcredentials/security-document-loader/actions?query=workflow%3A%22Node.js+CI%22)
+[![NPM Version](https://img.shields.io/npm/v/@digitalcredentials/security-document-loader.svg)](https://npm.im/@digitalcredentials/security-document-loader)
 
 > A Typescript/Javascript isomorphic library template, for use in the browser, Node.js, and React Native.
 
@@ -31,7 +31,7 @@ TBD
 To install via NPM:
 
 ```
-npm install @digitalcredentials/isomorphic-lib-template
+npm install @digitalcredentials/security-document-loader
 ```
 
 ### Development
@@ -39,8 +39,8 @@ npm install @digitalcredentials/isomorphic-lib-template
 To install locally (for development):
 
 ```
-git clone https://github.com/digitalcredentials/isomorphic-lib-template.git
-cd isomorphic-lib-template
+git clone https://github.com/digitalcredentials/security-document-loader.git
+cd security-document-loader
 npm install
 ```
 
