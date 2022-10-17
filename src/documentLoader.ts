@@ -17,6 +17,7 @@ import { JsonLdDocumentLoader } from 'jsonld-document-loader';
 import { CryptoLD } from '@digitalcredentials/crypto-ld';
 import * as didWeb from '@interop/did-web-resolver';
 import { parseResponseBody } from './parseResponse';
+import obCtx from '@digitalcredentials/open-badges-context';
 
 const cryptoLd = new CryptoLD();
 cryptoLd.use(Ed25519VerificationKey2020);
@@ -106,6 +107,11 @@ export function securityLoader({ fetchRemoteContexts = false }: SecurityLoaderPa
   loader.addStatic(dccCtx.CONTEXT_URL_V1, dccCtx.CONTEXT_V1);
 
   loader.addStatic(vcStatusListCtx.CONTEXT_URL_V1, vcStatusListCtx.CONTEXT_V1);
+
+  // Open Badges v3 Context (with multiple URL aliases)
+  loader.addStatic(obCtx.CONTEXT_URL_V3, obCtx.CONTEXT_V3)
+  loader.addStatic(obCtx.CONTEXT_URL_V3_JFF_V1, obCtx.CONTEXT_V3)
+  loader.addStatic(obCtx.CONTEXT_URL_V3_IMS, obCtx.CONTEXT_V3)
 
   loader.setDidResolver(resolver);
 
