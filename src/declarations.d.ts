@@ -1,3 +1,4 @@
+declare module '@digitalcredentials/crypto-ld';
 declare module '@digitalcredentials/dcc-context';
 declare module '@digitalcredentials/did-io';
 declare module '@digitalcredentials/did-method-key';
@@ -11,7 +12,6 @@ declare module '@digitalcredentials/http-client';
 declare module '@digitalcredentials/jsonld-signatures';
 declare module '@digitalcredentials/x25519-key-agreement-key-2020';
 declare module 'credentials-context';
-declare module 'crypto-ld';
 declare module 'jsonld-document-loader';
 declare module 'did-context';
 declare module 'ed25519-signature-2020-context';
