@@ -16,7 +16,12 @@
 
 ## Background
 
-TBD
+Included functionality:
+
+* Bundled contexts:
+  - DID, VC, DCC, Open Badges v3, ed25519 and x25519 crypto suite contexts
+* DID resolver for `did:key` and `did:web`
+* Optional loading of arbitrary contexts from the web (see Usage).
 
 ## Security
 
@@ -24,7 +29,7 @@ TBD
 
 ## Install
 
-- Node.js 14+ is recommended.
+- Node.js 16+ is recommended.
 
 ### NPM
 
@@ -46,7 +51,31 @@ npm install
 
 ## Usage
 
-TBD
+To get a default document loader (with the stock set of bundled contexts):
+
+```js
+import { securityLoader } from '@digitalcredentials/security-document-loader'
+
+const documentLoader = securityLoader().build()
+```
+
+To add additional contexts:
+
+```js
+import { securityLoader } from '@digitalcredentials/security-document-loader'
+
+const loader = securityLoader()
+loader.addStatic('https://example.com/my-context/v1', contextObject)
+
+const documentLoader = loader.build()
+```
+
+To enable fetching arbitrary contexts from the web (not recommended, if you can
+avoid it):
+
+```js
+const documentLoader = securityLoader({ fetchRemoteContexts: true }).build()
+```
 
 ## Contribute
 
