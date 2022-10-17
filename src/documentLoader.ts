@@ -14,7 +14,7 @@ import x25519 from 'x25519-key-agreement-2020-context';
 import cred from 'credentials-context';
 import vcStatusListCtx from '@digitalbazaar/vc-status-list-context';
 import { JsonLdDocumentLoader } from 'jsonld-document-loader';
-import { CryptoLD } from 'crypto-ld';
+import { CryptoLD } from '@digitalcredentials/crypto-ld';
 import * as didWeb from '@interop/did-web-resolver';
 import { parseResponseBody } from './parseResponse';
 
