@@ -15,7 +15,7 @@ module.exports = function (config) {
     },
 
     preprocessors: {
-      '**/*.ts': 'karma-typescript' // *.tsx for React Jsx
+      '**/*.ts': ['karma-typescript'] // *.tsx for React Jsx
     },
 
     reporters: ['mocha', 'karma-typescript'],

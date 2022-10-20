@@ -3,7 +3,7 @@
   "description": "A Typescript/Javascript isomorphic library template, for use in the browser, Node.js, and React Native.",
   "version": "0.1.2",
   "scripts": {
-    "build": "npm run clear && tsc -p tsconfig.json",
+    "build": "npm run clear && tsc -p tsconfig.json && ./build-dist.sh",
     "clear": "rimraf dist/*",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -19,13 +19,14 @@
     "README.md",
     "LICENSE.md"
   ],
-  "type": "module",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "browser": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js"
+      "require": "./dist/index.js",
+      "import": "./dist/esm/index.js"
     },
     "./package.json": "./package.json"
   },
@@ -40,6 +41,7 @@
     "@digitalcredentials/x25519-key-agreement-key-2020": "^3.0.0",
     "@interop/did-web-resolver": "^3.0.0",
     "credentials-context": "^2.0.0",
+    "crypto-ld": "^7.0.0",
     "did-context": "^3.1.1",
     "ed25519-signature-2020-context": "^1.1.0",
     "html-entities": "^2.3.3",
@@ -69,11 +71,11 @@
     "karma-sourcemap-loader": "^0.3.8",
     "karma-typescript": "^5.5.3",
     "mocha": "^10.1.0",
-    "nyc": "^15.1.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0"
   },
   "publishConfig": {
     "access": "public"
@@ -85,29 +87,8 @@
     ],
     "spec": "test/**/*.ts"
   },
-  "nyc": {
-    "extension": [
-      ".ts",
-      ".tsx"
-    ],
-    "include": [
-      "src/**/*.ts"
-    ],
-    "exclude": [
-      "**/*.d.ts"
-    ],
-    "reporter": [
-      "lcov",
-      "text-summary",
-      "html"
-    ]
-  },
-  "keywords": [
-    "interop",
-    "alliance"
-  ],
   "engines": {
-    "node": ">=12.0"
+    "node": ">=16.0"
   },
   "author": {
     "name": "Digital Credentials Consortium",

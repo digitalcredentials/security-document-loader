@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) 2022 Digital Credentials Consortium. All rights reserved.
+ * Copyright (c) 2021 Interop Alliance and Dmitri Zagidulin. All rights reserved.
  */
 import * as didKey from '@digitalcredentials/did-method-key';
 import { Ed25519VerificationKey2020 }
@@ -110,8 +110,8 @@ export function securityLoader({ fetchRemoteContexts = false }: SecurityLoaderPa
 
   // Open Badges v3 Context (with multiple URL aliases)
   loader.addStatic(obCtx.CONTEXT_URL_V3, obCtx.CONTEXT_V3)
-  loader.addStatic(obCtx.CONTEXT_URL_V3_JFF_V1, obCtx.CONTEXT_V3)
-  loader.addStatic(obCtx.CONTEXT_URL_V3_IMS, obCtx.CONTEXT_V3)
+  // loader.addStatic(obCtx.CONTEXT_URL_V3_JFF_V1, obCtx.CONTEXT_V3)
+  // loader.addStatic(obCtx.CONTEXT_URL_V3_IMS, obCtx.CONTEXT_V3)
 
   loader.setDidResolver(resolver);
 

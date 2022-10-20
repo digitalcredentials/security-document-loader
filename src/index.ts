@@ -1,4 +1,4 @@
 /*!
- * Copyright (c) 2022 Digital Credentials Consortium. All rights reserved.
+ * Copyright (c) 2021 Interop Alliance and Dmitri Zagidulin. All rights reserved.
  */
-export { httpClientHandler, securityLoader } from './documentLoader'
+export { securityLoader, httpClientHandler } from './documentLoader'

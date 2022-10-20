@@ -1,4 +1,3 @@
-declare module '@digitalcredentials/crypto-ld';
 declare module '@digitalcredentials/dcc-context';
 declare module '@digitalcredentials/did-io';
 declare module '@digitalcredentials/did-method-key';
@@ -19,3 +18,4 @@ declare module 'x25519-key-agreement-2020-context';
 declare module '@interop/did-web-resolver';
 declare module 'json-canonicalize';
 declare module 'react-native-keychain';
+declare module '@digitalcredentials/open-badges-context';
