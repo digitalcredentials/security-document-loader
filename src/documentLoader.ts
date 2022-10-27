@@ -110,8 +110,8 @@ export function securityLoader({ fetchRemoteContexts = false }: SecurityLoaderPa
 
   // Open Badges v3 Context (with multiple URL aliases)
   loader.addStatic(obCtx.CONTEXT_URL_V3, obCtx.CONTEXT_V3)
-  // loader.addStatic(obCtx.CONTEXT_URL_V3_JFF_V1, obCtx.CONTEXT_V3)
-  // loader.addStatic(obCtx.CONTEXT_URL_V3_IMS, obCtx.CONTEXT_V3)
+  loader.addStatic(obCtx.CONTEXT_URL_V3_JFF_V1, obCtx.CONTEXT_V3)
+  loader.addStatic(obCtx.CONTEXT_URL_V3_IMS, obCtx.CONTEXT_V3)
 
   loader.setDidResolver(resolver);
 
