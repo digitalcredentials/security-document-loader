@@ -1,7 +1,7 @@
 {
   "name": "@digitalcredentials/security-document-loader",
   "description": "A Typescript/Javascript isomorphic library template, for use in the browser, Node.js, and React Native.",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "scripts": {
     "build": "npm run clear && tsc -p tsconfig.json && ./build-dist.sh",
     "clear": "rimraf dist/*",
