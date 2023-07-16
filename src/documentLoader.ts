@@ -80,9 +80,10 @@ declare class IJsonLdDocumentLoader {
 
 interface SecurityLoaderParams {
   fetchRemoteContexts?: boolean;
+  useOBv3BetaContext?: boolean;
 }
 
-export function securityLoader({ fetchRemoteContexts = false }: SecurityLoaderParams = {}): IJsonLdDocumentLoader {
+export function securityLoader({ fetchRemoteContexts = false, useOBv3BetaContext = false }: SecurityLoaderParams = {}): IJsonLdDocumentLoader {
   const loader: IJsonLdDocumentLoader = new JsonLdDocumentLoader();
 
   loader.addStatic(
@@ -115,6 +116,12 @@ export function securityLoader({ fetchRemoteContexts = false }: SecurityLoaderPa
   // Open Badges v3 Contexts, includes OBv3 Beta, 3.0, 3.0.1, 3.0.2, etc.
   for (const [url, contextBody] of obCtx.contexts) {
     loader.addStatic(url, contextBody)
+  }
+
+  if (useOBv3BetaContext) {
+    // Workaround to validate legacy OBv3 BETA context VCs
+    loader.addStatic(obCtx.CONTEXT_URL_V3_0_0,
+      obCtx.contexts.get(obCtx.CONTEXT_URL_V3_BETA))
   }
 
   loader.setDidResolver(resolver);
