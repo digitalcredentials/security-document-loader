@@ -1,9 +1,8 @@
 # security-document-loader Changelog
 
-## 3.1.0 - 
+## 3.1.0 - 2023-07-16
 ### Added
-- Add Verifiable Credentials v2 **BETA** (non-final) context. Use at your own
-  risk, context is likely to change before the spec goes to final.
+- Add support for optionally loading OBv3 BETA context.
 
 ## 3.0.0 - 2023-07-16
 ### Changed
