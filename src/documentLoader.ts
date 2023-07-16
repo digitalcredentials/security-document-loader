@@ -18,6 +18,7 @@ import { CryptoLD } from '@digitalcredentials/crypto-ld';
 import * as didWeb from '@interop/did-web-resolver';
 import { parseResponseBody } from './parseResponse';
 import obCtx from '@digitalcredentials/open-badges-context';
+import vc2Context from '@digitalbazaar/credentials-v2-context';
 
 const cryptoLd = new CryptoLD();
 cryptoLd.use(Ed25519VerificationKey2020);
@@ -99,10 +100,13 @@ export function securityLoader({ fetchRemoteContexts = false }: SecurityLoaderPa
     didContext.contexts.get(didContext.constants.DID_CONTEXT_URL),
   );
 
+  // Verifiable Credentials Data Model 1.0
   loader.addStatic(
     CREDENTIALS_CONTEXT_V1_URL,
     credentialsContext.get(CREDENTIALS_CONTEXT_V1_URL),
   );
+  // Verifiable Credentials Data Model 2.0
+  loader.addStatic(vc2Context.CONTEXT_URL, vc2Context.CONTEXT);
 
   loader.addStatic(dccCtx.CONTEXT_URL_V1, dccCtx.CONTEXT_V1);
 

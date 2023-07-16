@@ -19,3 +19,4 @@ declare module '@interop/did-web-resolver';
 declare module 'json-canonicalize';
 declare module 'react-native-keychain';
 declare module '@digitalcredentials/open-badges-context';
+declare module '@digitalbazaar/credentials-v2-context';
