@@ -105,7 +105,7 @@ export function securityLoader({ fetchRemoteContexts = false }: SecurityLoaderPa
     CREDENTIALS_CONTEXT_V1_URL,
     credentialsContext.get(CREDENTIALS_CONTEXT_V1_URL),
   );
-  // Verifiable Credentials Data Model 2.0
+  // Verifiable Credentials Data Model 2.0 - BETA / non-final
   loader.addStatic(vc2Context.CONTEXT_URL, vc2Context.CONTEXT);
 
   loader.addStatic(dccCtx.CONTEXT_URL_V1, dccCtx.CONTEXT_V1);
