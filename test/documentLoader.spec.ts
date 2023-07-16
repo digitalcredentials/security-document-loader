@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { httpClientHandler, securityLoader } from "../src";
+import { httpClientHandler, securityLoader } from '../src';
 
 describe('documentLoader', () => {
   it('should load a document', async () => {
