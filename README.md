@@ -19,7 +19,7 @@
 Included functionality:
 
 * Bundled contexts:
-  - DID, VC 1.0 and 2.0, DCC, Open Badges v3, ed25519 and x25519 crypto suite contexts
+  - DID, VC 1.0 and 2.0-BETA, DCC, Open Badges v3, ed25519 and x25519 crypto suite contexts
 * DID resolver for `did:key` and `did:web`
 * Optional loading of arbitrary contexts from the web (see Usage).
 
