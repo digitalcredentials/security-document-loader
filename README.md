@@ -1,9 +1,9 @@
-# Example Isomorphic TS/JS Lib Template _(@digitalcredentials/security-document-loader)_
+# JSON-LD Document Loader _(@digitalcredentials/security-document-loader)_
 
 [![Build status](https://img.shields.io/github/workflow/status/digitalcredentials/security-document-loader/Node.js%20CI)](https://github.com/digitalcredentials/security-document-loader/actions?query=workflow%3A%22Node.js+CI%22)
 [![NPM Version](https://img.shields.io/npm/v/@digitalcredentials/security-document-loader.svg)](https://npm.im/@digitalcredentials/security-document-loader)
 
-> A Typescript/Javascript isomorphic library template, for use in the browser, Node.js, and React Native.
+> A secure and convenient JSON-LD document loader.
 
 ## Table of Contents
 
@@ -70,11 +70,61 @@ loader.addStatic('https://example.com/my-context/v1', contextObject)
 const documentLoader = loader.build()
 ```
 
+### Fetching From the Web
 To enable fetching arbitrary contexts from the web (not recommended, if you can
 avoid it):
 
 ```js
 const documentLoader = securityLoader({ fetchRemoteContexts: true }).build()
+```
+
+### Supported URL Protocol Handlers
+
+Out of the box, this library supports loading the following documents:
+
+* Explicitly added URLs from static local caches (that is, ones that you 
+  explicitly add via `loader.addStatic`)
+* DID Documents using the `did:key` and `did:web` methods.
+
+Additionally, if your use case allows it, you can enable `fetchRemoteContexts`, 
+which will add support for URLs using the `http` and `https` protocols (see 
+previous section).
+
+#### Adding Custom Protocol Handlers
+Sometimes you will need to add documents with other URL protocols. If you have
+internal code to resolve those protocols (for example, you can fetch some
+`urn:` documents from a local database), you can write a custom protocol
+handler:
+
+```js
+import { securityLoader } from '@digitalcredentials/security-document-loader'
+
+function getDocument (url) {
+  // Some internal function that fetches or creates documents
+}
+
+const customResolver = {
+  /**
+   * @param {object} options - Options hashmap.
+   * @param {string} options.url - Document URL (here `urn:...` key id)
+   * @returns {Promise<object>} - Resolves with key object document.
+   */
+  async get(params: Record<string, string>): Promise<unknown> {
+    let document
+    try {
+      document = await getDocument(params.url)
+    } catch(e) {
+      throw new Error('NotFoundError')
+    }
+
+    return document
+  }
+};
+
+// For example, use your `getDocument` function to resolve all `urn:` URIs:
+securityLoader.setProtocolHandler({protocol: 'urn', handler: customResolver})
+
+const documentLoader = securityLoader().build()
 ```
 
 ## Contribute
