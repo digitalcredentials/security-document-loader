@@ -1,6 +1,6 @@
 # security-document-loader Changelog
 
-## 3.0.0 -
+## 3.0.0 - 2023-07-16
 ### Changed
 - **BREAKING**: Now includes OBv3 contexts from beta to 3.0.2
 

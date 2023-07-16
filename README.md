@@ -3,7 +3,7 @@
 [![Build status](https://img.shields.io/github/actions/workflow/status/digitalcredentials/security-document-loader/main.yml?branch=main)](https://github.com/digitalcredentials/security-document-loader/actions?query=workflow%3A%22Node.js+CI%22)
 [![NPM Version](https://img.shields.io/npm/v/@digitalcredentials/security-document-loader.svg)](https://npm.im/@digitalcredentials/security-document-loader)
 
-> A secure and convenient JSON-LD document loader.
+> A secure and convenient JSON-LD document loader for Node.js, browsers, and React Native.
 
 ## Table of Contents
 
