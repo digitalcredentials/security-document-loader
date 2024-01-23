@@ -1,5 +1,9 @@
 # security-document-loader Changelog
 
+## 3.2.0 - 
+### Added
+- Add support for OBv3 v3.0.3 and Extensions contexts.
+
 ## 3.1.0 - 2023-07-16
 ### Added
 - Add support for optionally loading OBv3 BETA context.
