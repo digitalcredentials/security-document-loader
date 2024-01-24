@@ -1,5 +1,13 @@
 # security-document-loader Changelog
 
+## 4.0.0 -
+### Changed
+- **BREAKING**: Use the Typescript-enabled `@interop/did-web-resolver@4.0.0`, 
+  which uses DigitalBazaar's version of `http-client`,
+  and updated `@digitalcredentials/bnid@3.0.1`.
+  Usage and API should remain unchanged, but bumping to major semver due to
+  significant backend change.
+
 ## 3.2.0 - 2024-01-23
 ### Added
 - Add support for OBv3 v3.0.3 and Extensions contexts.
