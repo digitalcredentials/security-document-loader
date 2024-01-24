@@ -1,6 +1,6 @@
 # security-document-loader Changelog
 
-## 4.0.0 -
+## 4.0.0 - 2024-01-23
 ### Changed
 - **BREAKING**: Use the Typescript-enabled `@interop/did-web-resolver@4.0.0`, 
   which uses DigitalBazaar's version of `http-client`,
