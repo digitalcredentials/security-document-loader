@@ -18,6 +18,7 @@ import { CryptoLD } from '@digitalcredentials/crypto-ld';
 import * as didWeb from '@interop/did-web-resolver';
 import { parseResponseBody } from './parseResponse';
 import obCtx from '@digitalcredentials/open-badges-context';
+import { httpClient } from '@digitalbazaar/http-client';
 // import vc2Context from '@digitalbazaar/credentials-v2-context';
 
 const cryptoLd = new CryptoLD();
@@ -53,9 +54,9 @@ export const httpClientHandler = {
         'Cache-Control': 'no-cache',
         'Pragma': 'no-cache'
       };
-      result = await fetch(params.url, { headers });
-    } catch(e) {
-      throw new Error('NotFoundError');
+      result = await httpClient.get(params.url, { headers });
+    } catch(e: any) {
+      throw new Error(`NotFoundError loading "${params.url}": ${e.message}`);
     }
 
     return parseResponseBody(result);
