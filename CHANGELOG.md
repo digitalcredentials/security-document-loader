@@ -1,5 +1,11 @@
 # security-document-loader Changelog
 
+## 5.0.0 - 2024-02-10
+### Changed
+- **BREAKING**: For the HTTP protocol handler (for fetching un-cached documents
+  from the web), switch to using `@digitalbazaar/http-client` instead of the
+  global `fetch()` object. Improves React Native compatibility.
+
 ## 4.0.0 - 2024-01-23
 ### Changed
 - **BREAKING**: Use the Typescript-enabled `@interop/did-web-resolver@4.0.0`, 
