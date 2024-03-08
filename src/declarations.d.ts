@@ -2,6 +2,7 @@ declare module '@digitalcredentials/dcc-context';
 declare module '@digitalcredentials/did-io';
 declare module '@digitalcredentials/did-method-key';
 declare module '@digitalcredentials/vc';
+declare module '@digitalbazaar/vc-bitstring-status-list-context';
 declare module '@digitalcredentials/vc-status-list';
 declare module '@digitalbazaar/vc-status-list-context';
 declare module '@digitalcredentials/vpqr';

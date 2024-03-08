@@ -2,6 +2,11 @@
  * Copyright (c) 2021 Interop Alliance and Dmitri Zagidulin. All rights reserved.
  */
 import * as didKey from '@digitalcredentials/did-method-key';
+import * as didWeb from '@interop/did-web-resolver';
+import * as vc1Context from 'credentials-context';
+import * as vc2Context from '@digitalbazaar/credentials-v2-context';
+import * as vcBitstringStatusListCtx from '@digitalbazaar/vc-bitstring-status-list-context';
+import vcStatusListCtx from '@digitalbazaar/vc-status-list-context';
 import { Ed25519VerificationKey2020 }
   from '@digitalcredentials/ed25519-verification-key-2020';
 import { X25519KeyAgreementKey2020 }
@@ -11,27 +16,17 @@ import dccCtx from '@digitalcredentials/dcc-context';
 import didContext from 'did-context';
 import ed25519 from 'ed25519-signature-2020-context';
 import x25519 from 'x25519-key-agreement-2020-context';
-import cred from 'credentials-context';
-import vcStatusListCtx from '@digitalbazaar/vc-status-list-context';
 import { JsonLdDocumentLoader } from 'jsonld-document-loader';
 import { CryptoLD } from '@digitalcredentials/crypto-ld';
-import * as didWeb from '@interop/did-web-resolver';
-import { parseResponseBody } from './parseResponse';
 import obCtx from '@digitalcredentials/open-badges-context';
 import { httpClient } from '@digitalbazaar/http-client';
-import * as vc2Context from '@digitalbazaar/credentials-v2-context';
+import { parseResponseBody } from './parseResponse';
 
 const cryptoLd = new CryptoLD();
 cryptoLd.use(Ed25519VerificationKey2020);
 cryptoLd.use(X25519KeyAgreementKey2020);
 const didWebDriver = didWeb.driver({ cryptoLd });
 
-const {
-  contexts: credentialsContext,
-  constants: {
-    CREDENTIALS_CONTEXT_V1_URL,
-  },
-} = cred;
 const didKeyDriver = didKey.driver();
 const resolver = new CachedResolver();
 resolver.use(didKeyDriver);
@@ -103,15 +98,17 @@ export function securityLoader({ fetchRemoteContexts = false, useOBv3BetaContext
   );
 
   // Verifiable Credentials Data Model 1.0
-  loader.addStatic(
-    CREDENTIALS_CONTEXT_V1_URL,
-    credentialsContext.get(CREDENTIALS_CONTEXT_V1_URL),
-  );
+  loader.addStatic(vc1Context.CONTEXT_URL, vc1Context.CONTEXT);
+
   // Verifiable Credentials Data Model 2.0 - BETA / non-final
   loader.addStatic(vc2Context.CONTEXT_URL, vc2Context.CONTEXT);
 
   loader.addStatic(dccCtx.CONTEXT_URL_V1, dccCtx.CONTEXT_V1);
 
+  // Bitstring Status List
+  loader.addStatic(vcBitstringStatusListCtx.CONTEXT_URL, vcBitstringStatusListCtx.CONTEXT);
+
+  // Status List 2021 (DEPRECATED)
   loader.addStatic(vcStatusListCtx.CONTEXT_URL_V1, vcStatusListCtx.CONTEXT_V1);
 
   // Open Badges v3 Contexts, includes OBv3 Beta, 3.0, 3.0.1, 3.0.2, etc.
