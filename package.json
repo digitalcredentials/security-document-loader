@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@digitalbazaar/credentials-v2-context": "github:digitalbazaar/credentials-v2-context#main",
+    "@digitalbazaar/data-integrity-context": "^2.0.0",
     "@digitalbazaar/http-client": "^4.1.0",
     "@digitalbazaar/vc-bitstring-status-list-context": "^1.0.0",
     "@digitalbazaar/vc-status-list-context": "^3.0.1",
