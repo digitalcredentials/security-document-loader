@@ -108,7 +108,9 @@ export function securityLoader({ fetchRemoteContexts = false, useOBv3BetaContext
   loader.addStatic(vc2Context.CONTEXT_URL, vc2Context.CONTEXT);
 
   // Data Integrity Context
-  loader.addStatic(dataIntegrityContext.CONTEXT_URL, dataIntegrityContext.CONTEXT);
+  for (const [url, context] of dataIntegrityContext.contexts) {
+    loader.addStatic(url, context)
+  }
 
   // DCC Context
   loader.addStatic(dccContext.CONTEXT_URL_V1, dccContext.CONTEXT_V1);
@@ -120,8 +122,8 @@ export function securityLoader({ fetchRemoteContexts = false, useOBv3BetaContext
   loader.addStatic(vcStatusListContext.CONTEXT_URL_V1, vcStatusListContext.CONTEXT_V1);
 
   // Open Badges v3 Contexts, includes OBv3 Beta, 3.0, 3.0.1, 3.0.2, etc.
-  for (const [url, contextBody] of obContext.contexts) {
-    loader.addStatic(url, contextBody)
+  for (const [url, context] of obContext.contexts) {
+    loader.addStatic(url, context)
   }
 
   if (useOBv3BetaContext) {
