@@ -3,9 +3,9 @@
  */
 import * as didKey from '@digitalcredentials/did-method-key';
 import * as didWeb from '@interop/did-web-resolver';
-import * as vc1Context from 'credentials-context';
 import * as vc2Context from '@digitalbazaar/credentials-v2-context';
 import * as vcBitstringStatusListContext from '@digitalbazaar/vc-bitstring-status-list-context';
+import vc1Context from 'credentials-context';
 import vcStatusListContext from '@digitalbazaar/vc-status-list-context';
 import dataIntegrityContext from '@digitalbazaar/data-integrity-context';
 import { Ed25519VerificationKey2020 }
@@ -15,8 +15,8 @@ import { X25519KeyAgreementKey2020 }
 import { CachedResolver } from '@digitalcredentials/did-io';
 import dccContext from '@digitalcredentials/dcc-context';
 import didContext from 'did-context';
-import ed25519 from 'ed25519-signature-2020-context';
-import x25519 from 'x25519-key-agreement-2020-context';
+import ed25519Context from 'ed25519-signature-2020-context';
+import x25519Context from 'x25519-key-agreement-2020-context';
 import { JsonLdDocumentLoader } from 'jsonld-document-loader';
 import { CryptoLD } from '@digitalcredentials/crypto-ld';
 import obContext from '@digitalcredentials/open-badges-context';
@@ -85,14 +85,14 @@ export function securityLoader({ fetchRemoteContexts = false, useOBv3BetaContext
 
   // Ed25519 Signature 2020 Context
   loader.addStatic(
-    ed25519.constants.CONTEXT_URL,
-    ed25519.contexts.get(ed25519.constants.CONTEXT_URL),
+    ed25519Context.constants.CONTEXT_URL,
+    ed25519Context.contexts.get(ed25519Context.constants.CONTEXT_URL),
   );
 
   // X25519 Key Agreement 2020 Context
   loader.addStatic(
-    x25519.constants.CONTEXT_URL,
-    x25519.contexts.get(x25519.constants.CONTEXT_URL),
+    x25519Context.constants.CONTEXT_URL,
+    x25519Context.contexts.get(x25519Context.constants.CONTEXT_URL),
   );
 
   // DID Context
