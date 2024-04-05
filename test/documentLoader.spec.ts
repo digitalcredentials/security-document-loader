@@ -24,6 +24,14 @@ describe('documentLoader', () => {
       .equal('did:key:z6MkhVTX9BF3NGYX6cc7jWpbNnR7cAjH8LUffabZP8Qu4ysC');
   });
 
+  it('should load v2 context from web', async () => {
+    const documentLoader = securityLoader({fetchRemoteContexts: true}).build();
+
+    const url = 'https://www.w3.org/ns/credentials/v2';
+    const result = await documentLoader(url);
+    expect(result.document).to.exist;
+  });
+
   it('supports beta OBv3 context', async () => {
     const load = securityLoader().build()
     const { document } = await load('https://purl.imsglobal.org/spec/ob/v3p0/context.json')
