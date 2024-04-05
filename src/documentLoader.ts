@@ -54,7 +54,7 @@ export const httpClientHandler = {
         'Cache-Control': 'no-cache',
         'Pragma': 'no-cache'
       };
-      result = await httpClient.get(params.url, { headers });
+      result = await httpClient.get(params.url, { headers, parseBody: false });
     } catch(e: any) {
       throw new Error(`NotFoundError loading "${params.url}": ${e.message}`);
     }
