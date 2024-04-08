@@ -1,5 +1,9 @@
 # security-document-loader Changelog
 
+## 5.0.1 - 2024-04-07
+### Changed
+- **BREAKING**: Disable JSON handling in `http-client` (was causing [issue #13](https://github.com/digitalcredentials/security-document-loader/issues/13)).
+
 ## 5.0.0 - 2024-02-10
 ### Changed
 - **BREAKING**: For the HTTP protocol handler (for fetching un-cached documents
