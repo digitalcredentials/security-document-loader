@@ -21,7 +21,6 @@ import { JsonLdDocumentLoader } from 'jsonld-document-loader';
 import { CryptoLD } from '@digitalcredentials/crypto-ld';
 import obContext from '@digitalcredentials/open-badges-context';
 import { httpClient } from '@digitalbazaar/http-client';
-import { parseResponseBody } from './parseResponse';
 
 const cryptoLd = new CryptoLD();
 cryptoLd.use(Ed25519VerificationKey2020);
@@ -50,12 +49,11 @@ export const httpClientHandler = {
         'Cache-Control': 'no-cache',
         'Pragma': 'no-cache'
       };
-      result = await httpClient.get(params.url, { headers });
+      ({data: result} = await httpClient.get(params.url, { headers }));
     } catch(e: any) {
       throw new Error(`NotFoundError loading "${params.url}": ${e.message}`);
     }
-
-    return parseResponseBody(result);
+    return result;
   }
 };
 
