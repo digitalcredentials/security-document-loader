@@ -1,6 +1,6 @@
 # security-document-loader Changelog
 
-## 6.0.0 - 
+## 6.0.0 - 2024-08-04
 ### Added
 - Add support for VC DM 2.0 context
 
