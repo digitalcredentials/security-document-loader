@@ -20,5 +20,5 @@ declare module 'x25519-key-agreement-2020-context';
 declare module 'json-canonicalize';
 declare module 'react-native-keychain';
 declare module '@digitalcredentials/open-badges-context';
-declare module '@digitalbazaar/credentials-v2-context';
-declare module '@digitalbazaar/http-client';
+declare module '@digitalcredentials/credentials-v2-context';
+declare module '@digitalcredentials/http-client';

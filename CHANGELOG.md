@@ -1,5 +1,12 @@
 # security-document-loader Changelog
 
+## 6.0.0 - 
+### Added
+- Add support for VC DM 2.0 context
+
+### Changed
+- **BREAKING**: Switch to `@digitalcredentials/http-client` fork.
+
 ## 5.0.0 - 2024-02-10
 ### Changed
 - **BREAKING**: For the HTTP protocol handler (for fetching un-cached documents

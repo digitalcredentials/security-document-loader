@@ -3,7 +3,7 @@
  */
 import * as didKey from '@digitalcredentials/did-method-key';
 import * as didWeb from '@interop/did-web-resolver';
-import * as vc2Context from '@digitalbazaar/credentials-v2-context';
+import * as vc2Context from '@digitalcredentials/credentials-v2-context';
 import * as vcBitstringStatusListContext from '@digitalbazaar/vc-bitstring-status-list-context';
 import vc1Context from 'credentials-context';
 import vcStatusListContext from '@digitalbazaar/vc-status-list-context';
@@ -20,7 +20,7 @@ import x25519Context from 'x25519-key-agreement-2020-context';
 import { JsonLdDocumentLoader } from 'jsonld-document-loader';
 import { CryptoLD } from '@digitalcredentials/crypto-ld';
 import obContext from '@digitalcredentials/open-badges-context';
-import { httpClient } from '@digitalbazaar/http-client';
+import { httpClient } from '@digitalcredentials/http-client';
 import { parseResponseBody } from './parseResponse';
 
 const cryptoLd = new CryptoLD();
