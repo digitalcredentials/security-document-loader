@@ -1,5 +1,9 @@
 # security-document-loader Changelog
 
+## 6.0.1 - 2024-11-12
+### Fixed
+- Fix Typescript types declaration ([PR #17](https://github.com/digitalcredentials/security-document-loader/pull/17/files)).
+
 ## 6.0.0 - 2024-08-04
 ### Added
 - Add support for VC DM 2.0 context
