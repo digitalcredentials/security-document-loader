@@ -31,6 +31,23 @@ describe('documentLoader', () => {
     const result = await documentLoader(url);
     expect(result.document).to.exist;
   });
+  
+  it('should load a did:web document from web', async () => {
+    const documentLoader = securityLoader({fetchRemoteContexts: true}).build();
+    const url = 'https://digitalcredentials.github.io/dcc-did-web/did.json';
+    const result = await documentLoader(url);
+    expect(result.document).to.exist;
+    expect(result.document.assertionMethod.type === 'Ed25519VerificationKey2020')
+  });
+
+  it('should load a multikey did:web document from web', async () => {
+    const documentLoader = securityLoader({fetchRemoteContexts: true}).build();
+    const url = 'https://digitalcredentials.github.io/dcc-did-web/multikey/did.json';
+    const result = await documentLoader(url);
+    expect(result.document).to.exist;
+    expect(result.document.verificationMethod.type === 'Multkey')
+  });
+
 
   it('supports beta OBv3 context', async () => {
     const load = securityLoader().build()
