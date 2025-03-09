@@ -6,7 +6,7 @@ declare module '@digitalbazaar/vc-bitstring-status-list-context';
 declare module '@digitalcredentials/vc-status-list';
 declare module '@digitalbazaar/vc-status-list-context';
 declare module '@digitalcredentials/did-method-web';
-declare module '@digitalbazaar/ed25519-multikey';
+declare module '@digitalcredentials/ed25519-multikey';
 declare module '@digitalcredentials/vpqr';
 declare module '@digitalbazaar/data-integrity-context';
 declare module '@digitalcredentials/ed25519-verification-key-2020';
