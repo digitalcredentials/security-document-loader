@@ -8,6 +8,7 @@ import * as vcBitstringStatusListContext from '@digitalbazaar/vc-bitstring-statu
 import vc1Context from 'credentials-context';
 import vcStatusListContext from '@digitalbazaar/vc-status-list-context';
 import dataIntegrityContext from '@digitalbazaar/data-integrity-context';
+import * as Ed25519Multikey from '@digitalcredentials/ed25519-multikey';
 // import { Ed25519VerificationKey2020 }
   // from '@digitalcredentials/ed25519-verification-key-2020';
 // import { X25519KeyAgreementKey2020 }
@@ -20,13 +21,23 @@ import x25519Context from 'x25519-key-agreement-2020-context';
 import { JsonLdDocumentLoader } from 'jsonld-document-loader';
 import obContext from '@digitalcredentials/open-badges-context';
 import { httpClient } from '@digitalcredentials/http-client';
-import { parseResponseBody } from './parseResponse';
+import { parseResponseBody } from './parseResponse.js';
 
 const resolver = new CachedResolver();
 const didKeyDriver = didKey.driver();
 const didWebDriver = didWeb.driver();
 resolver.use(didKeyDriver);
 resolver.use(didWebDriver);
+
+didWebDriver.use({
+  multibaseMultikeyHeader: 'z6Mk',
+  fromMultibase: Ed25519Multikey.from
+});
+
+didKeyDriver.use({
+  multibaseMultikeyHeader: 'z6Mk',
+  fromMultibase: Ed25519Multikey.from
+});
 
 export const httpClientHandler = {
   /**
