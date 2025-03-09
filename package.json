@@ -15,8 +15,7 @@
     "rebuild": "npm run clear && npm run build",
     "test": "npm run lint && npm run test-node",
     "test-node": "npm run build-test && mocha dist/esm/test/*.spec.js && rimraf dist/esm/test",
-    "test-karma": "karma start karma.conf.js",
-    "test-node-old": "cross-env NODE_ENV=test TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/*.ts'"
+    "test-karma": "karma start karma.conf.js" 
   },
   "files": [
     "dist",
