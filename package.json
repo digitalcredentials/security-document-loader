@@ -3,18 +3,17 @@
   "description": "A secure and convenient JSON-LD document loader for Node.js, browsers, and React Native.",
   "version": "6.0.1",
   "scripts": {
-    "build-cjs": "tsc -p tsconfig.cjs.json",
     "build-esm": "tsc -p tsconfig.esm.json",
     "build-types": "tsc -p tsconfig.types.json",
     "build-test": "tsc -p tsconfig.test.json",
-    "build": "npm run clear && npm run build-types && npm run build-cjs && npm run build-esm",
+    "build": "npm run clear && npm run build-types && npm run build-esm",
     "clear": "rimraf dist/*",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "npm run build",
     "rebuild": "npm run clear && npm run build",
     "test": "npm run lint && npm run test-node",
-    "test-node": "npm run build-test && mocha dist/esm/test/*.spec.js && rimraf dist/esm/test",
+    "test-node": "npm run build-test && mocha dist/test/*.spec.js",
     "test-karma": "karma start karma.conf.js" 
   },
   "files": [
@@ -23,19 +22,9 @@
     "README.md",
     "LICENSE.md"
   ],
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
   "type": "module",
-  "browser": "dist/cjs/index.js",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./package.json": "./package.json"
-  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "@digitalbazaar/data-integrity-context": "^2.0.0",
     "@digitalbazaar/vc-bitstring-status-list-context": "^1.0.0",
