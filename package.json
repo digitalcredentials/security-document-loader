@@ -1,7 +1,7 @@
 {
   "name": "@digitalcredentials/security-document-loader",
   "description": "A secure and convenient JSON-LD document loader for Node.js, browsers, and React Native.",
-  "version": "7.0.0-beta.1",
+  "version": "7.0.0",
   "scripts": {
     "build-esm": "tsc -p tsconfig.esm.json",
     "build-types": "tsc -p tsconfig.types.json",
@@ -33,9 +33,9 @@
     "@digitalcredentials/crypto-ld": "^7.0.2",
     "@digitalcredentials/dcc-context": "^1.0.0",
     "@digitalcredentials/did-io": "^1.0.2",
-    "@digitalcredentials/did-method-key": "^3.0.0-beta.1",
-    "@digitalcredentials/did-method-web": "^1.1.0-beta.1",
-    "@digitalcredentials/ed25519-multikey": "^1.4.0-beta.1",
+    "@digitalcredentials/did-method-key": "^3.0.0",
+    "@digitalcredentials/did-method-web": "^1.1.0",
+    "@digitalcredentials/ed25519-multikey": "^1.4.0",
     "@digitalcredentials/ed25519-verification-key-2020": "^3.2.2",
     "@digitalcredentials/http-client": "^5.0.1",
     "@digitalcredentials/open-badges-context": "^2.1.0",

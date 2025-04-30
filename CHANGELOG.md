@@ -1,5 +1,12 @@
 # security-document-loader Changelog
 
+## 7.0.0 - 2025-04-30
+### Changed
+- switch to `@digitalcredentials/did-method-web` from `@interop/did-web-resolver` for did-web resolution
+- rework build process
+- update dependencies
+- **BREAKING**: remove cjs build
+
 ## 6.0.1 - 2024-11-12
 ### Fixed
 - Fix Typescript types declaration ([PR #17](https://github.com/digitalcredentials/security-document-loader/pull/17/files)).
