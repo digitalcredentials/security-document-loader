@@ -1,5 +1,11 @@
 # security-document-loader Changelog
 
+## 8.0.0 - 2025-05-22
+### Changed
+- **BREAKING**: updated @digitalcredentials/credentials-v2-context and 
+digitalcredentials/open-badges-context to include latest OBv3.0.3 and VC DM 2.0
+contexts
+
 ## 7.0.0 - 2025-04-30
 ### Changed
 - switch to `@digitalcredentials/did-method-web` from `@interop/did-web-resolver` for did-web resolution
